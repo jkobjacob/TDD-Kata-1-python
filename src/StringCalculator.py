@@ -37,9 +37,10 @@ class StringCalculator():
 
     @staticmethod
     def sums(lst):
-        [sum_total, neg_string] = reduce(lambda acc, num: (lambda total, neg_str: [total + int(num), neg_str] if (int(num) > 0)
-                                                    else [total, str(num)] if (neg_str == "")
-                                                        else [total, neg_str + " " + str(num)])(acc[0],acc[1]),
+        [sum_total, neg_string] = reduce(lambda acc, num: (lambda total, neg_str, n: [total + n, neg_str] if (n > 0) and (n < 1001)
+                                                    else [total, num] if (neg_str == "") and (n < 0)
+                                                        else [total, neg_str + " " + num] if (n < 0)
+                                                            else [total, neg_str])(acc[0],acc[1],int(num)),
                                     lst,
                                     [0,""])
         

@@ -40,3 +40,6 @@ class TestStringCalculator(unittest.TestCase):
             _ = tmp.add("")
         
         self.assertEqual(10,tmp.get_called_count())
+
+    def test_whether_numbers_greater_than_1000_are_ignored(self):
+        self.assertEqual(2,self.stringCalculator.add("2,1001"))
