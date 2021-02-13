@@ -43,3 +43,6 @@ class TestStringCalculator(unittest.TestCase):
 
     def test_whether_numbers_greater_than_1000_are_ignored(self):
         self.assertEqual(2,self.stringCalculator.add("2,1001"))
+
+    def test_for_delimiters_of_any_length(self):
+        self.assertEqual(6,self.stringCalculator.add("//[***]\n1***2***3"))

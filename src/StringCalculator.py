@@ -17,15 +17,19 @@ class StringCalculator():
             return self.sums(self.split_str(ip_str,self.delimiter))
     
     def process_ip_for_delimiter(self,ip_str):
-        re_obj = re.search("//(.*)\\n",ip_str)
+        re_obj = re.search("\\[(.*)\\]",ip_str) or re.search("//(.*)\\n",ip_str)
 
         if re_obj != None:
-            return [self.delimiter + "|" + re_obj.groups()[0], ip_str.split("\n")[1]]
+            return [self.delimiter + "|" + self.escape(re_obj.groups()[0]), ip_str.split("\n")[1]]
         
         return [self.delimiter,ip_str]
 
     def get_called_count(self):
         return self.add_called_count
+
+    @staticmethod
+    def escape(i_str):
+        return "".join(list(map(lambda x: "\\" + x,i_str)))
 
     @staticmethod
     def inc(x):
