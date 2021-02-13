@@ -5,3 +5,6 @@ class StringCalculator():
     def add(self,ip_str):
         if ip_str == "":
             return 0
+
+        else:
+            return int(ip_str)
