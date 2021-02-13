@@ -27,6 +27,13 @@ class StringCalculator():
 
     @staticmethod
     def sums(lst):
-        return reduce(lambda total, num: total + int(num),
-                lst,
-                0)
+        [sum_total, neg_string] = reduce(lambda acc, num: (lambda total, neg_str: [total + int(num), neg_str] if (int(num) > 0)
+                                                    else [total, str(num)])(acc[0],acc[1]),
+                                    lst,
+                                    [0,""])
+        
+        if neg_string != "":
+            raise ValueError("negatives not allowed " + neg_string)
+
+        else:
+            return sum_total

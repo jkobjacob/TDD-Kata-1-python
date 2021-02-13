@@ -21,3 +21,10 @@ class TestStringCalculator(unittest.TestCase):
 
     def test_for_string_input_with_different_delimiters(self):
         self.assertEqual(3,self.stringCalculator.add("//;\n1;2"))
+
+    def test_for_string_input_with_a_negative_number(self):
+        try:
+            self.stringCalculator.add("-1,2")
+        except ValueError as ve:
+            self.assertEqual("negatives not allowed -1", ve.args[0])
+        
