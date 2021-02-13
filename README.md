@@ -11,4 +11,4 @@ A TDD_kata exercise to build a string calculator that parses numbers provided as
 ![](https://github.com/jkobjacob/TDD-Kata-1-python/blob/master/imgs/tests.png)
 
 ### Manual testing
-![](https://github.com/jkobjacob/TDD-Kata-1-python/tree/master/imgs/manual_tests.png)
+![](https://github.com/jkobjacob/TDD-Kata-1-python/blob/master/imgs/manual_tests.png)
