@@ -9,6 +9,14 @@ class StringCalculator():
             return 0
 
         else:
-            return reduce(lambda acc, num: acc + int(num),
-                        ip_str.split(self.delimiter),
-                        0)
+            return self.sums(self.split_str(ip_str,self.delimiter))
+    
+    @staticmethod
+    def split_str(string,delimiter):
+        return string.split(delimiter)
+
+    @staticmethod
+    def sums(lst):
+        return reduce(lambda total, num: total + int(num),
+                lst,
+                0)
