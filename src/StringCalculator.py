@@ -1,8 +1,9 @@
 from functools import reduce
+import re
 
 class StringCalculator():
     def __init__(self):
-        self.delimiter = ","
+        self.delimiter = ",|\\n"
 
     def add(self,ip_str):
         if ip_str == "":
@@ -13,7 +14,7 @@ class StringCalculator():
     
     @staticmethod
     def split_str(string,delimiter):
-        return string.split(delimiter)
+        return re.split(delimiter,string)
 
     @staticmethod
     def sums(lst):
