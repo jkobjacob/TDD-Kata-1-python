@@ -2,12 +2,14 @@ from functools import reduce
 import re
 
 class StringCalculator():
+
     def __init__(self):
         self.delimiter = ",|\\n"
         self.add_called_count = 0
 
     
     def add(self,ip_str):
+        self.delimiter = ",|\\n"
         self.add_called_count = self.inc(self.add_called_count)
 
         if ip_str == "":
