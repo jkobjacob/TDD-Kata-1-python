@@ -4,8 +4,11 @@ import re
 class StringCalculator():
     def __init__(self):
         self.delimiter = ",|\\n"
+        self.add_called_count = 0
 
     def add(self,ip_str):
+        self.add_called_count = self.inc(self.add_called_count)
+
         if ip_str == "":
             return 0
 
@@ -20,6 +23,13 @@ class StringCalculator():
             return [self.delimiter + "|" + re_obj.groups()[0], ip_str.split("\n")[1]]
         
         return [self.delimiter,ip_str]
+
+    def get_called_count(self):
+        return self.add_called_count
+
+    @staticmethod
+    def inc(x):
+        return x + 1
 
     @staticmethod
     def split_str(string,delimiter):

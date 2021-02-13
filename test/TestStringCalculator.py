@@ -33,3 +33,10 @@ class TestStringCalculator(unittest.TestCase):
             self.stringCalculator.add("-1,2,-3")
         except ValueError as ve:
             self.assertEqual("negatives not allowed -1 -3", ve.args[0])
+
+    def test_for_how_many_times_add_was_invoked(self):
+        tmp = StringCalculator()
+        for _ in range(10):
+            _ = tmp.add("")
+        
+        self.assertEqual(10,tmp.get_called_count())
