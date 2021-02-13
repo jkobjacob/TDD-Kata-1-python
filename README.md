@@ -8,7 +8,7 @@ A TDD_kata exercise to build a string calculator that parses numbers provided as
 ```
 
 ### Test Suites in action
-![](https://github.com/Jkob-Jacob/TDD-Kata-1-python/blob/master/imgs/tests.png)
+![](https://github.com/Jkob-Jacob/TDD-Kata-1-python/tree/master/imgs/tests.png)
 
 ### Manual testing
-![](https://github.com/Jkob-Jacob/TDD-Kata-1-python/blob/master/imgs/manual_tests.png)
+![](https://github.com/Jkob-Jacob/TDD-Kata-1-python/tree/master/imgs/manual_tests.png)
