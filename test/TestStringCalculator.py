@@ -28,3 +28,8 @@ class TestStringCalculator(unittest.TestCase):
         except ValueError as ve:
             self.assertEqual("negatives not allowed -1", ve.args[0])
         
+    def test_for_string_input_with_multiple_negatives(self):
+        try:
+            self.stringCalculator.add("-1,2,-3")
+        except ValueError as ve:
+            self.assertEqual("negatives not allowed -1 -3", ve.args[0])
